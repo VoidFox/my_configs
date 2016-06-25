@@ -50,7 +50,9 @@ source $HOME/.zsh/extras.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 
-autoload $HOME/.zsh/funcs/*(:t)   # not active until called
+source $HOME/.zsh/custom/plugins/gibo/gibo-completion.zsh
+
+autoload $HOME/.zsh/custom/funcs/*(:t)   # not active until called
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.homesick/repos/homeshick/homeshick.sh

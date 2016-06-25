@@ -48,6 +48,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
   untracked = white bold
 
 [alias]
+  register = !mr register
   aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   commit-random = !git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\"
   k = !gitk

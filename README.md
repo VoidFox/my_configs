@@ -1,3 +1,3 @@
 # my_configs
 
-Requirements: Powerline + oh-my-zsh
+Requirements: Powerline + oh-my-zsh + myrepos

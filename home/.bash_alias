@@ -12,8 +12,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 
-export EDITOR="nano"
-
+export EDITOR="vim"
 
 #alias ls='ls --color=auto'
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
@@ -50,7 +49,6 @@ alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && 
 alias fixpacdata='sudo pacman-optimize && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #optimize data the pacman and update
 
 alias usbiso='sudo mkusb' #writes ISO in pendrive: usbiso name.iso
-#alias pastebin='/home/voidfox/Dropbox/bin/pastebin-it.sh'
 alias wetter='curl http://wttr\.in/fürth'      # wetter = weather in german
 alias wetter-erlangen='curl http://wttr\.in/erlangen'
 alias wetter-nürnberg='curl http://wttr\.in/nürnberg'

@@ -16,6 +16,8 @@ alias open="xdg-open"
 
 alias cd..='cd ..'
 
+alias l='ls -lah --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+
 alias rm="rm -I"                 # confirm before fucking something up
 alias cp="cp -i"
 alias mv='mv -i'

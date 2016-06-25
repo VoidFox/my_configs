@@ -1,4 +1,3 @@
 home/.zsh/.zsh_history
 
-#https://github.com/simonwhitaker/gibo.git
-home/.zsh/custom/plugins/*
+home/.zsh/custom/plugins/**

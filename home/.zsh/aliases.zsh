@@ -22,6 +22,8 @@ alias mv='mv -i'
 
 alias mkdir='mkdir -p'
 
+alias nano ='vim'
+
 alias du='du -kh'                         # Makes a more readable output.
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
@@ -37,7 +39,7 @@ alias grep='grep -i'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 #sublime with empty project..
-alias st3='subl3 -aw --project .config/sublime-text-3/Packages/User/Projects/Standart.sublime-project'
+alias st3='subl3 -aw --project $HOME/.config/sublime-text-3/Packages/User/Projects/Standart.sublime-project'
 
 #alias pacman='pacman --color auto'
 alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data the pacman and update

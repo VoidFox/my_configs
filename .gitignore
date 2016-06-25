@@ -21,7 +21,17 @@
 !home/.zsh/funcs/**
 
 !home/.vimrc
+
+!*.nanorc
 !home/.nanorc
 
+!home/.weechat/*.conf
+!home/.weechat/*.txt
+!home/.weechat/cleanup-weechat
+!home/.weechat/*/**
+
+
+
+home/.weechat/sec.conf #passwords...
 home/.zsh/.zsh_history
 home/.zsh/funcs/testfunc

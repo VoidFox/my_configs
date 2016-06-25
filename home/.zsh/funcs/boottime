@@ -1,0 +1,45 @@
+#!/bin/zsh
+#
+#   show off "systemd-analyze plot"'s svg image
+#
+#
+#   depends on ImageMagick and imgur.sh (aur package)
+#
+
+function boottime () {
+
+  TMPFILE=/tmp/debug-boot.svg
+  TMPIMG=/tmp/debug-boot.png
+
+  systemd-analyze plot > $TMPFILE
+  convert $TMPFILE $TMPIMG
+
+  echo ""
+  echo "Do you wish open it with a Browser or Image-Viewer?"
+  select bin in "Browser" "Img" "No"; do
+    case $bin in
+      Browser ) $BROWSER $TMPFILE; break;;
+      Img ) xdg-open $TMPIMG; break;;
+      No ) break;;
+    esac
+  done
+
+  echo ""
+  echo "Do you wish to upload the Image to Imgur?   (requires imgur.sh!)"
+  select yn in "Yes" "No"; do
+    case $yn in
+      Yes ) imgur.sh $TMPFILE; break;;
+      No ) break;;
+    esac
+  done
+
+  echo ""
+  echo "Do you wish to delete the Files or move them to ~ ?"
+  select dh in "Delete" "Home"; do
+    case $dh in
+      Delete ) rm -f $TMPFILE;rm -f $TMPIMG; break;;
+      Home ) mv $TMPFILE $HOME; mv $TMPIMG $HOME; break;;
+    esac
+
+  done
+}

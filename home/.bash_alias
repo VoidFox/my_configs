@@ -1,0 +1,137 @@
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s dotglob
+shopt -s expand_aliases
+shopt -s extglob
+shopt -s histappend
+shopt -s hostcomplete
+shopt -s nocaseglob
+
+export HISTSIZE=10000
+export HISTFILESIZE=${HISTSIZE}
+export HISTCONTROL=ignoreboth
+
+export EDITOR="nano"
+
+
+#alias ls='ls --color=auto'
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -lah --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias mkdir='mkdir -p'
+alias ..='cd ..'
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+#alias grep='grep --color=auto'
+alias grep='grep --color=tty -d skip'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+
+alias du='du -kh'    # Makes a more readable output.
+#alias df='df -h'                          # human-readable sizes
+alias df='df -kTh'
+alias free='free -h'                      # show sizes in MB
+alias np='nano PKGBUILD'
+
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+
+#alias pacman='pacman --color auto'
+alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data the pacman and update
+alias fixpacdata='sudo pacman-optimize && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #optimize data the pacman and update
+
+alias usbiso='sudo mkusb' #writes ISO in pendrive: usbiso name.iso
+#alias pastebin='/home/voidfox/Dropbox/bin/pastebin-it.sh'
+alias wetter='curl http://wttr\.in/fürth'      # wetter = weather in german
+alias wetter-erlangen='curl http://wttr\.in/erlangen'
+alias wetter-nürnberg='curl http://wttr\.in/nürnberg'
+
+
+
+#ex - archive extractor
+#usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+
+# Color man pages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
+
+#bash history completion
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+
+##############
+# Netzwerk Kommandos
+
+#lsof -i -n -P
+#netstat -ntulp
+#ss -tulpa
+#netstat -an | grep LISTEN | grep -v ^unix
+
+
+###############
+#  A line across the entire width of the terminal
+#printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+
+
+
+# source extra files
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
+if [ -f /etc/bash_completion ]; then
+	    . /etc/bash_completion
+fi
+
+if [ -f ~/.gpg-agent ]; then
+    . ~/.gpg-agent
+fi
+
+if [ -f /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+fi

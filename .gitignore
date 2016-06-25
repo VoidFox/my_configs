@@ -1,0 +1,27 @@
+#ignore everything
+*
+
+#but find files in subfolders
+#!*/
+!README.md
+!.gitignore
+!home/.gitignore_skel
+!home/.gitconfig
+!home/.gitattributes
+
+#!.tmux.conf
+
+!home/.bashrc
+!home/.bash_alias
+
+!*.zsh
+!home/.zshrc
+!home/.zsh/**
+!home/.zsh/custom/**
+!home/.zsh/funcs/**
+
+!home/.vimrc
+!home/.nanorc
+
+home/.zsh/.zsh_history
+home/.zsh/funcs/testfunc

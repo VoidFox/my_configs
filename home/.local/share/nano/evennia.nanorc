@@ -1,0 +1,10 @@
+## Here is my rc for Evennia.
+##
+syntax "evennia" "\.ev$"
+#header "^#!.*/ev[-0-9._]*"
+icolor brightblue "def [0-9A-Z_]+"
+color brightcyan "\<(@batchprocess|drop|@teleport|@tel|@set)\>"
+#color brightgreen "['][^']*[^\\][']" "[']{3}.*[^\\][']{3}"
+#color brightgreen "["][^"]*[^\\]["]" "["]{3}.*[^\\]["]{3}"
+#color brightgreen start=""""[^"]" end=""""" start="'''[^']" end="'''"
+color brightred "#.*$"

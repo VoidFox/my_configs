@@ -135,6 +135,8 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'tmux-plugins/vim-tmux'
 
+" evennia syntax etc >> https://github.com/amfl/vim-evennia.git
+Plug 'amfl/vim-evennia'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'

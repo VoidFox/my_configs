@@ -156,7 +156,7 @@ set softwrap
 # set speller "aspell -x -c"
 
 ## Allow nano to be suspended.
-# set suspend
+set suspend
 
 ## Use this tab size instead of the default; it must be greater than 0.
 set tabsize 2
@@ -234,10 +234,7 @@ set functioncolor green
 ##
 ## To include all existing syntax definitions, you can do:
 include "/usr/share/nano/*.nanorc"
-# $HOME doesnt work.. use absolute paths
-include "/home/voidfox/.local/share/nano/*.nanorc"
-include "/home/yourname/.local/share/nano/*.nanorc"
-
+include "~/.local/share/nano/*.nanorc"
 
 ## Key bindings.
 ## See nanorc(5) (section REBINDING KEYS) for more details on this.

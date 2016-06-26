@@ -23,8 +23,9 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 
-plugins=(tmux gpg-agent z cp rsync extract git github gitflow archlinux thefuck sublime python pyenv pylint pip django themes virtualenv virtualenvwrapper systemd nmap catimg)
-
+# Horrible i know....
+plugins=(archlinux fbterm systemd gpg-agent z cp common-aliases rsync extract git gitfast github git-extras sublime python pyenv pylint pip django virtualenv virtualenvwrapper themes thefuck nmap sprunge catimg nyan web-search)
+#TODO: tmux tmuxinator
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -51,6 +52,11 @@ source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 
 source $HOME/.zsh/custom/plugins/gibo/gibo-completion.zsh
+
+# Read Vim Man Files in Zsh
+source $HOME/.zsh/custom/plugins/vimman/vimman.zsh
+zstyle ':vimman:' dir ~/.vim/plugged
+zstyle ':vimman:' verbose yes
 
 autoload $HOME/.zsh/custom/funcs/*(:t)   # not active until called
 

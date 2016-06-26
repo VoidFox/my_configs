@@ -42,4 +42,4 @@ setopt transient_rprompt # only show the rprompt on the current prompt
 setopt multios # perform implicit tees or cats when multiple redirections are attempted
 
 # ===== Aliases
-setopt COMPLETE_ALIASES
+setopt complete_aliases

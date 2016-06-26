@@ -17,7 +17,6 @@ alias open="xdg-open"
 alias cd..='cd ..'
 alias clr='clear'
 alias j='jobs -l'
-
 alias l='ls -lah --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 
 # safety nets
@@ -58,6 +57,10 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 #sublime with empty project..
 alias st3='subl3 -aw --project $HOME/.config/sublime-text-3/Packages/User/Projects/Standart.sublime-project'
+
+# dotfile management
+alias hs='homeshick'
+compdef hs='homeshick'
 
 #alias pacman='pacman --color auto'
 alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data the pacman and update

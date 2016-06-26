@@ -15,16 +15,31 @@ alias open="xdg-open"
 #is-executable hub && eval "$(hub alias -s)"
 
 alias cd..='cd ..'
+alias clr='clear'
+alias j='jobs -l'
 
 alias l='ls -lah --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 
-alias rm="rm -I"                 # confirm before fucking something up
-alias cp="cp -i"
+# safety nets
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
+# confirmation #
 alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 alias mkdir='mkdir -p'
 
-alias nano ='vim'
+alias edit='vim'
+alias nano='vim'
+alias tmux='wemux s'
+
 
 alias du='du -kh'                         # Makes a more readable output.
 alias df='df -h'                          # human-readable sizes
@@ -57,6 +72,17 @@ alias tt-cl='tt++ -G -t "Cursed Library" -r $HOME/.tintin/CursedLib.tt'
 #debugging
 alias debug-reqs='strace -eopen'
 alias debug-boot='systemd-analyze plot > /tmp/debug-boot.svg && $BROWSER /tmp/debug-boot.svg && rm -i /tmp/debug-boot.svg'
+alias ports='netstat -tulanp'
+
+# to find memory hogs:
+alias mem_hogs_top='top -l 1 -o rsize -n 10'
+alias mem_hogs_ps='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'
+
+# to find CPU hogs
+alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
+
+# swapinfo: to display info on swap
+alias swapinfo='sysctl vm.swapusage'
 
 #imgur.sh uploader
 alias imgur='imgur.sh'

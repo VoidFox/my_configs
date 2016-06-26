@@ -1,3 +1,4 @@
+# basic oh-my-zsh installed on system
 source $HOME/.zsh/zshrc-system.zsh
 
 ##easier to install but ate more ressources at startup somehow

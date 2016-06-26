@@ -1,5 +1,4 @@
-export TERM="screen-256color"
-#export TERM="xterm-256color"
+export TERM="xterm-256color"
 
 
 #export _Z_CMD='z' #to change the command name (default z).

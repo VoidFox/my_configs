@@ -41,7 +41,8 @@ alias nano='vim'
 alias tmux='wemux s'
 
 
-alias du='du -kh'                         # Makes a more readable output.
+alias du="ncdu"
+alias duh='du -kh'                         # Makes a more readable output.
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less

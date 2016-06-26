@@ -51,14 +51,16 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
   register = !mr register
   aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   commit-random = !git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\"
+  a = add -p
   k = !gitk
-  st = status -s
+  st = status -sb
   g = grep -p
-  l = log --oneline
-  lg = log --oneline --graph --decorate
+  l = log --oneline --graph --decorate
+  lg = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
   ls = ls-files
   lsf = "!git ls-files | grep -i"
   lsr = ls-tree -r master --name-only
+  rank = shortlog -sn --no-merges
   clone-aur = "!f() {( git clone https://aur.archlinux.org/$1.git )}; f"
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git

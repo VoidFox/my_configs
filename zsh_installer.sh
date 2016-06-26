@@ -2,6 +2,10 @@
 #Download and Source Antigen
 #
 
+#install fonts
+fc-cache -vf $HOME/.fonts/
+
+#install antigen
 if [[ ! -e $HOME/.zsh/antigen/antigen.zsh ]]; then
   cd $HOME/.zsh && git clone https://github.com/zsh-users/antigen.git
 fi

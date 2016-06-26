@@ -1,3 +1,4 @@
 home/.zsh/.zsh_history
 home/.zsh/antigen/**
 home/.zsh/custom/plugins/**
+home/.zsh/custom/funcs/**

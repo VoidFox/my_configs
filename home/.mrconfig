@@ -1,3 +1,3 @@
 
-[.zsh/custom/plugins/gibo]
-checkout = git clone 'https://github.com/simonwhitaker/gibo.git' 'gibo'
+[.zsh/antigen]
+checkout = git clone 'https://github.com/zsh-users/antigen.git' 'antigen'

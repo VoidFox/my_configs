@@ -40,7 +40,7 @@ fi
 #   load fancy stuff
 #
 
-fpath=($HOME/.zsh/funcs $fpath)
+fpath=($HOME/.zsh/custom/funcs $fpath)
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
 source $HOME/.zsh/powerlevel9k.zsh

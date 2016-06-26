@@ -34,7 +34,7 @@ source $HOME/.zsh/extras.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 
-source $HOME/.zsh/custom/funcs/*(:t)   # not active until called
+autoload $HOME/.zsh/custom/funcs/*(:t)   # not active until called
 
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 

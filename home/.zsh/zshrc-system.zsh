@@ -1,4 +1,5 @@
-export TERM="xterm-256color"
+export TERM="screen-256color"
+#export TERM="xterm-256color"
 
 
 #export _Z_CMD='z' #to change the command name (default z).
@@ -51,12 +52,12 @@ source $HOME/.zsh/extras.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 
-source $HOME/.zsh/custom/plugins/gibo/gibo-completion.zsh
+#source $HOME/.zsh/custom/plugins/gibo/gibo-completion.zsh
 
 # Read Vim Man Files in Zsh
-source $HOME/.zsh/custom/plugins/vimman/vimman.zsh
-zstyle ':vimman:' dir ~/.vim/plugged
-zstyle ':vimman:' verbose yes
+#source $HOME/.zsh/custom/plugins/vimman/vimman.zsh
+#zstyle ':vimman:' dir ~/.vim/plugged
+#zstyle ':vimman:' verbose yes
 
 autoload $HOME/.zsh/custom/funcs/*(:t)   # not active until called
 

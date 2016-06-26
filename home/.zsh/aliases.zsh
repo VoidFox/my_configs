@@ -61,6 +61,10 @@ alias debug-boot='systemd-analyze plot > /tmp/debug-boot.svg && $BROWSER /tmp/de
 #imgur.sh uploader
 alias imgur='imgur.sh'
 
+#pastebins
+alias ix.io="$@ | curl -F 'f:1=<-' ix.io"
+#alias sprunge="$@ | curl -F 'sprunge=<-' http://sprunge.us"
+
 # gsh shows the number of commits for the current repos for all developers
 alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 

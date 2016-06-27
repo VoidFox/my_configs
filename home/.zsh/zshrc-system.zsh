@@ -115,3 +115,5 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
 
 # provide .. as a completion
 zstyle ':completion:*' special-dirs ..
+
+zstyle ':completion:*' menu select

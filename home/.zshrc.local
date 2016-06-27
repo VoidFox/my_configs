@@ -265,11 +265,11 @@ restart () {
 #}
 
 ## Memory overview
-memusage() {
-    ps aux | awk '{if (NR > 1) print $5;
-                   if (NR > 2) print "+"}
-                   END { print "p" }' | dc
-}
+# memusage() {
+#     ps aux | awk '{if (NR > 1) print $5;
+#                    if (NR > 2) print "+"}
+#                    END { print "p" }' | dc
+# }
 
 ## print hex value of a number
 #hex() {

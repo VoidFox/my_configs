@@ -181,7 +181,7 @@ zstyle ':completion:*' special-dirs true
 #$abk[SnL]="| sort -n | less"
 
 ## get top 10 shell commands:
-alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
+#alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 
 ## Execute \kbd{./configure}
 #alias CO="./configure"

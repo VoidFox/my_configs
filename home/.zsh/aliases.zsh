@@ -127,6 +127,9 @@ alias handbrakecli='HandBrakeCLI'
 # su cuz lazy
 alias nethogs='sudo nethogs'
 
+# easier to remember
+alias top10='h10'
+
 # Recursively remove Apple meta files
 #alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -exec /bin/rm {} \;"

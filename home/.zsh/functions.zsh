@@ -147,3 +147,27 @@ function server() {
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# colorized cat
+c() {
+  for file in "$@"
+  do
+    pygmentize -f console256 -g "$file"
+  done
+}
+
+# colorized less
+lessc() {
+  #pygmentize -O style=sourcerer -f console256 -g $1 | less -r
+  pygmentize -f console256 -g $1 | less -r
+}
+
+# read markdown files like manpages
+md() {
+    pandoc -s -f markdown -t man "$*" | man -l -
+}
+
+# nullpointer url shortener
+short() {
+  curl -F"shorten=$*" https://0x0.st
+}

@@ -1,3 +1,6 @@
+# Use CTRL+X A to expand them
+
+
 # Help command
 #autoload -Uz run-help
 #autoload -Uz run-help-git
@@ -92,8 +95,11 @@ alias swapinfo='sysctl vm.swapusage'
 alias imgur='imgur.sh'
 
 #pastebins
-alias ix.io="$@ | curl -F 'f:1=<-' ix.io"
-#alias sprunge="$@ | curl -F 'sprunge=<-' http://sprunge.us"
+#alias sprunge="cat $@ | curl -F 'sprunge=<-' http://sprunge.us"
+#alias ix.io="cat $@ | curl -F 'f:1=<-' ix.io"
+#alias clbin="cat $@ | curl -F 'clbin=<-' https://clbin.com"
+
+alias future="toilet -t -f future"
 
 # gsh shows the number of commits for the current repos for all developers
 alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
@@ -119,3 +125,4 @@ alias cleanupad="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+

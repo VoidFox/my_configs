@@ -1,4 +1,18 @@
-#!/bin/zsh
+#!/bin/sh
+
+mv $HOME/.zshrc $HOME/.zsh/zshrc.original
+
+# DOWNLOAD GRML´s zsh... MODIFY THE zshrc.local to your liking!!!
+
+wget -O $HOME/.zshrc http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+wget -O $HOME/.zshrc.local  http://git.grml.org/f/grml-etc-core/etc/skel/.zshrc
+
+(echo "";echo "";echo "") >> $HOME/.zshrc.local
+echo source $HOME/.zsh/zshrc-dotvoid.zsh >> $HOME/.zshrc.local
+
+
+
+
 
 ##install fonts
 fc-cache -vf $HOME/.fonts/
@@ -11,6 +25,5 @@ fc-cache -vf $HOME/.fonts/
 #installing homeshick
 #git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 
-mv $HOME/.zshrc $HOME/.zsh/.zshrc.original
-echo source $HOME/.zsh/zshrc-blackbox.zsh > $HOME/.zshrc
+
 source $HOME/.zshrc

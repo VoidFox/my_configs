@@ -1,3 +1,6 @@
 
 [.zsh/antigen]
 checkout = git clone 'https://github.com/zsh-users/antigen.git' 'antigen'
+
+[.homesick/repos/dotvoid]
+checkout = git clone 'git@github.com:VoidFox/my_configs.git' 'dotvoid'

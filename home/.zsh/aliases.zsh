@@ -3,9 +3,9 @@
 
 # Help command
 #autoload -Uz run-help
-#autoload -Uz run-help-git
-#autoload -Uz run-help-svn
-#autoload -Uz run-help-svk
+autoload -Uz run-help-git
+autoload -Uz run-help-svn
+autoload -Uz run-help-svk
 #unalias run-help
 alias help=run-help
 
@@ -15,6 +15,7 @@ alias o="xdg-open" #cuz lazy af
 alias open="xdg-open"
 
 # alias git=hub
+compdef g='git'
 #is-executable hub && eval "$(hub alias -s)"
 
 alias cd..='cd ..'
@@ -58,7 +59,7 @@ alias grep='grep -i'
 #alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
-#sublime with empty project..
+#sublime-text with empty project..
 alias st3='subl3 -aw --project $HOME/.config/sublime-text-3/Packages/User/Projects/Standart.sublime-project'
 
 # dotfile management
@@ -69,11 +70,15 @@ compdef hs='homeshick'
 alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data the pacman and update
 alias fixpacdata='sudo pacman-optimize && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #optimize data the pacman and update
 
-alias usbiso='sudo mkusb' #writes ISO in pendrive: usbiso name.iso
+#writes ISO in pendrive: usbiso name.iso
+alias usbiso='sudo mkusb'
+
+# nice weather
 alias wetter='curl http://wttr\.in/fürth'      # wetter = weather in german
 alias wetter-erlangen='curl http://wttr\.in/erlangen'
 alias wetter-nürnberg='curl http://wttr\.in/nürnberg'
 
+# mush game
 alias tt-cl='tt++ -G -t "Cursed Library" -r $HOME/.tintin/CursedLib.tt'
 
 #debugging
@@ -91,6 +96,10 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 # swapinfo: to display info on swap
 alias swapinfo='sysctl vm.swapusage'
 
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
 #imgur.sh uploader
 alias imgur='imgur.sh'
 
@@ -99,6 +108,7 @@ alias imgur='imgur.sh'
 #alias ix.io="cat $@ | curl -F 'f:1=<-' ix.io"
 #alias clbin="cat $@ | curl -F 'clbin=<-' https://clbin.com"
 
+# funstuff
 alias future="toilet -t -f future"
 
 # gsh shows the number of commits for the current repos for all developers
@@ -121,8 +131,3 @@ alias nethogs='sudo nethogs'
 #alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -exec /bin/rm {} \;"
 alias cleanupad="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-

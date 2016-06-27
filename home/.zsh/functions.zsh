@@ -149,25 +149,26 @@ function tre() {
 }
 
 # colorized cat
-c() {
+function c() {
   for file in "$@"
   do
+    #pygmentize -O style=sourcerer -f console256 -g "$file"
     pygmentize -f console256 -g "$file"
   done
 }
 
 # colorized less
-lessc() {
+function lessc() {
   #pygmentize -O style=sourcerer -f console256 -g $1 | less -r
   pygmentize -f console256 -g $1 | less -r
 }
 
 # read markdown files like manpages
-md() {
+function md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
 # nullpointer url shortener
-short() {
+function short() {
   curl -F"shorten=$*" https://0x0.st
 }

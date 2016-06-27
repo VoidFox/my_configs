@@ -50,7 +50,8 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 [alias]
   register = !mr register
   aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
-  commit-random = !git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\"
+  random-commit = !git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\"
+  random-push = !git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\" && git push
   a = add -p
   k = !gitk
   st = status -sb

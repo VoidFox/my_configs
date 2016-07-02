@@ -5,8 +5,11 @@
   excludesfile = ~/.gitignore_skel
 
 [user]
-	name = VoidFox
-	email = git@voidfox.eu
+  name = VoidFox
+  email = git@voidfox.eu
+
+[push]
+	default = upstream
 
 [diff]
   tool = sublimerge
@@ -15,14 +18,14 @@
   cmd = subl3 -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
 [merge]
-	tool = sublimerge
+  tool = sublimerge
 
 [mergetool "sublimerge"]
   cmd = subl3 -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
   trustExitCode = false
 
 [filter "password-filter"]
-clean = "sed -e 's/^password=.*/#password=TODO/'"
+  clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 [color]
   ui = auto
@@ -30,6 +33,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
   diff = auto
   status = auto
   interactive = auto
+  grep = auto
 
 [color "branch"]
   current = yellow reverse

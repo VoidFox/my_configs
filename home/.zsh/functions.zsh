@@ -12,13 +12,13 @@ mostused() {
 # coloured manuals
 man() {
   env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    LESS_TERMCAP_mb=$'\e[01;31m'       \
+    LESS_TERMCAP_md=$'\e[01;38;5;74m'  \
+    LESS_TERMCAP_me=$'\e[0m'           \
+    LESS_TERMCAP_se=$'\e[0m'           \
+    LESS_TERMCAP_so=$'\e[38;5;246m'    \
+    LESS_TERMCAP_ue=$'\e[0m'           \
+    LESS_TERMCAP_us=$'\e[04;38;5;146m' \
     man "$@"
 }
 

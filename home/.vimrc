@@ -120,11 +120,7 @@ filetype plugin indent on
 "let g:tex_flavor='latex'
 
 
-if has('gui_running')
- set background=dark
- colorscheme solarized
-endif
-
+" Plugins
 
 call plug#begin('~/.vim/plugged')
 " blueish theme
@@ -143,5 +139,10 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 call plug#end()
 
-"set background=dark
-"colorscheme gotham
+
+
+if has('gui_running')
+ set background=dark
+ " colorscheme solarized
+ colorscheme gotham
+endif

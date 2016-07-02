@@ -14,6 +14,11 @@ alias h='fc -rl 10000 1' #"history" but reversed..
 alias o="xdg-open" #cuz lazy af
 alias open="xdg-open"
 
+#copy output of last command to clipboard
+alias cl="fc -e -|xclip"
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
 # alias git=hub
 compdef g='git'
 #is-executable hub && eval "$(hub alias -s)"
@@ -67,11 +72,14 @@ alias hs='homeshick'
 compdef hs='homeshick'
 
 #alias pacman='pacman --color auto'
-alias fixpacman='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data the pacman and update
-alias fixpacdata='sudo pacman-optimize && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #optimize data the pacman and update
+alias pacman-fix='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #unlock data and update the system
+alias pacman-fixdata='sudo pacman-optimize && sudo pacman-mirrors -g && sudo pacman -Syyuu  && sudo pacman -Suu' #optimize data and update
 
 #writes ISO in pendrive: usbiso name.iso
 alias usbiso='sudo mkusb'
+
+# Get your current public IP
+alias myip="curl icanhazip.com"
 
 # nice weather
 alias wetter='curl http://wttr\.in/fürth'      # wetter = weather in german
@@ -82,9 +90,16 @@ alias wetter-nürnberg='curl http://wttr\.in/nürnberg'
 alias tt-cl='tt++ -G -t "Cursed Library" -r $HOME/.tintin/CursedLib.tt'
 
 #debugging
-alias debug-reqs='strace -eopen'
+alias debug-journal='journalctl -xb'
 alias debug-boot='systemd-analyze plot > /tmp/debug-boot.svg && $BROWSER /tmp/debug-boot.svg && rm -i /tmp/debug-boot.svg'
+alias debug-reqs='strace -eopen'
 alias ports='netstat -tulanp'
+
+###    and a couple more useful cmds to find ports
+#lsof -i -n -P
+#netstat -ntulp
+#ss -tulpa
+#netstat -an | grep LISTEN | grep -v ^unix
 
 # to find memory hogs:
 alias mem_hogs_top='top -l 1 -o rsize -n 10'
@@ -134,3 +149,19 @@ alias top10='h10'
 #alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -exec /bin/rm {} \;"
 alias cleanupad="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
+
+# trim newlines
+#alias tn='tr -d "\n"'
+
+# list TODO/FIX lines from the current project
+alias todos="ack -n --nogroup '(TODO|FIX(ME)?):'"
+
+# mount... just cleaned up
+alias cmount="mount | column -t"
+
+# so cool, much hacker, very wow
+alias busy="cat /dev/urandom | hexdump -C | grep "ca fe""
+
+# screen stuff
+#alias weechat='screen -R weechat || screen -S weechat weechat'
+alias httpd='screen -S http python -m SimpleHTTPServer 8080'

@@ -66,6 +66,20 @@ zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host p
 #WORDCHARS='*?_[]~=&;!#$%^(){}'
 #WORDCHARS='${WORDCHARS:s@/@}'
 
+# # thanks to Mikachu in #zsh on Freenode (2010-03-15 22:00 CET)
+# # just type '...' to get '../..'
+# rationalise-dot() {
+# if [[ $LBUFFER =~ '(^|/| |      |'$'\n''|\||;|&)\.\.$' ]]; then
+#   LBUFFER+=/
+#   zle self-insert
+#   zle self-insert
+# else
+#   zle self-insert
+# fi
+# }
+# zle -N rationalise-dot
+# bindkey . rationalise-dot
+
 # just type '...' to get '../..'
 rationalise-dot() {
 local MATCH

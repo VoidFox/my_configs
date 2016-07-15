@@ -1,4 +1,5 @@
 #!/bin/zsh
 #
 function testfunc () {
+  zenity --info --ellipsize --text="%@"
 }

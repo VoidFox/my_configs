@@ -14,10 +14,7 @@ alias h='fc -rl 10000 1' #"history" but reversed..
 alias o="xdg-open" #cuz lazy af
 alias open="xdg-open"
 
-#copy output of last command to clipboard
-alias cl="fc -e -|xclip"
-# copy the working directory path
-alias cpwd='pwd|tr -d "\n"|pbcopy'
+alias settings="bmenu"
 
 # alias git=hub
 compdef g='git'
@@ -94,6 +91,7 @@ alias debug-journal='journalctl -xb'
 alias debug-boot='systemd-analyze plot > /tmp/debug-boot.svg && $BROWSER /tmp/debug-boot.svg && rm -i /tmp/debug-boot.svg'
 alias debug-reqs='strace -eopen'
 alias ports='netstat -tulanp'
+alias ping1='ping -c1'
 
 ###    and a couple more useful cmds to find ports
 #lsof -i -n -P
@@ -152,6 +150,11 @@ alias cleanupad="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
 
 # trim newlines
 #alias tn='tr -d "\n"'
+
+#copy output of last command to clipboard
+#alias cl="fc -e -|xclip"
+# copy the working directory path
+#alias cpwd='pwd|tr -d "\n"|xclip'
 
 # list TODO/FIX lines from the current project
 alias todos="ack -n --nogroup '(TODO|FIX(ME)?):'"
